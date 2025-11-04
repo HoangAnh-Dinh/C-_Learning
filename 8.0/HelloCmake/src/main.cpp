@@ -1,7 +1,6 @@
-#include <iostream>
-using namespace std;
+#include "include/mylib.h"
 
 int main() {
-    cout << "Hello, CMake + VSCode!" << endl;
+    print_message("Hello from library!");
     return 0;
 }

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "E:/Git/C-_Learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -Dmylib_EXPORTS @CMakeFiles/mylib.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\mylib.dir\\src\\include\\mylib.cpp.obj -c E:\\Git\\C-_Learning\\8.0\\HelloCmake\\src\\include\\mylib.cpp",
+  "file": "E:/Git/C-_Learning/8.0/HelloCmake/src/include/mylib.cpp",
+  "output": "CMakeFiles/mylib.dir/src/include/mylib.cpp.obj"
+},
+{
+  "directory": "E:/Git/C-_Learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyApp.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\MyApp.dir\\src\\main.cpp.obj -c E:\\Git\\C-_Learning\\8.0\\HelloCmake\\src\\main.cpp",
+  "file": "E:/Git/C-_Learning/8.0/HelloCmake/src/main.cpp",
+  "output": "CMakeFiles/MyApp.dir/src/main.cpp.obj"
+}
+]
