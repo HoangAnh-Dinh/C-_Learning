@@ -15,3 +15,5 @@ add_library(mylib SHARED src/include/mylib.cpp)
 
 # Nối (link) thư viện vào executable
 target_link_libraries(MyApp PRIVATE mylib)
+
+target_include_directories(MyApp PRIVATE src/include)

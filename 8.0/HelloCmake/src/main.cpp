@@ -1,4 +1,4 @@
-#include "include/mylib.h"
+#include "mylib.h"
 
 int main() {
     print_message("Hello from library!");

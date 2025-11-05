@@ -1,6 +1,6 @@
 CMakeFiles/MyApp.dir/src/main.cpp.obj: \
  E:\Git\C-_Learning\8.0\HelloCmake\src\main.cpp \
- E:\Git\C-_Learning\8.0\HelloCmake\src\include/mylib.h \
+ E:/Git/C-_Learning/8.0/HelloCmake/src/include/mylib.h \
  C:/msys64/ucrt64/include/c++/13.2.0/string \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \
