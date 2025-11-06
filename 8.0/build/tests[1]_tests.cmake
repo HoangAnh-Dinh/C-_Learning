@@ -1,0 +1,5 @@
+add_test([=[AddTest.HandlesPositiveInput]=]  E:/Git/C-_Learning/8.0/build/tests.exe [==[--gtest_filter=AddTest.HandlesPositiveInput]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[AddTest.HandlesPositiveInput]=]  PROPERTIES WORKING_DIRECTORY E:/Git/C-_Learning/8.0/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[AddTest.HandlesNegativeInput]=]  E:/Git/C-_Learning/8.0/build/tests.exe [==[--gtest_filter=AddTest.HandlesNegativeInput]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[AddTest.HandlesNegativeInput]=]  PROPERTIES WORKING_DIRECTORY E:/Git/C-_Learning/8.0/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  tests_TESTS AddTest.HandlesPositiveInput AddTest.HandlesNegativeInput)

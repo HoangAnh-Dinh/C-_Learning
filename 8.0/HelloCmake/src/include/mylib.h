@@ -1,4 +1,4 @@
 #pragma once
 #include <string>
 
-void print_message(const std::string& msg);
+int add(const int &a, const int &b);

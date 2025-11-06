@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc libadd.a CMakeFiles/add.dir/src/include/mylib.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe libadd.a

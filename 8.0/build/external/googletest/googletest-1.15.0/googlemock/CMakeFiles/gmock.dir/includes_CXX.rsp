@@ -1,0 +1,1 @@
+-I"E:/Git/C-_Learning/8.0/HelloCmake/external/googletest/googletest-1.15.0/googlemock/include" -I"E:/Git/C-_Learning/8.0/HelloCmake/external/googletest/googletest-1.15.0/googlemock" -isystem "E:/Git/C-_Learning/8.0/HelloCmake/external/googletest/googletest-1.15.0/googletest/include" -isystem "E:/Git/C-_Learning/8.0/HelloCmake/external/googletest/googletest-1.15.0/googletest"

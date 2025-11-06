@@ -1,0 +1,57 @@
+Start testing: Nov 07 06:02 SE Asia Standard Time
+----------------------------------------------------------
+1/2 Testing: AddTest.HandlesPositiveInput
+1/2 Test: AddTest.HandlesPositiveInput
+Command: "E:/Git/C-_Learning/8.0/build/tests.exe" "--gtest_filter=AddTest.HandlesPositiveInput" "--gtest_also_run_disabled_tests"
+Directory: E:/Git/C-_Learning/8.0/build
+"AddTest.HandlesPositiveInput" start time: Nov 07 06:02 SE Asia Standard Time
+Output:
+----------------------------------------------------------
+Running main() from E:\Git\C-_Learning\8.0\HelloCmake\external\googletest\googletest-1.15.0\googletest\src\gtest_main.cc
+Note: Google Test filter = AddTest.HandlesPositiveInput
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AddTest
+[ RUN      ] AddTest.HandlesPositiveInput
+[       OK ] AddTest.HandlesPositiveInput (0 ms)
+[----------] 1 test from AddTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.62 sec
+----------------------------------------------------------
+Test Passed.
+"AddTest.HandlesPositiveInput" end time: Nov 07 06:02 SE Asia Standard Time
+"AddTest.HandlesPositiveInput" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: AddTest.HandlesNegativeInput
+2/2 Test: AddTest.HandlesNegativeInput
+Command: "E:/Git/C-_Learning/8.0/build/tests.exe" "--gtest_filter=AddTest.HandlesNegativeInput" "--gtest_also_run_disabled_tests"
+Directory: E:/Git/C-_Learning/8.0/build
+"AddTest.HandlesNegativeInput" start time: Nov 07 06:02 SE Asia Standard Time
+Output:
+----------------------------------------------------------
+Running main() from E:\Git\C-_Learning\8.0\HelloCmake\external\googletest\googletest-1.15.0\googletest\src\gtest_main.cc
+Note: Google Test filter = AddTest.HandlesNegativeInput
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AddTest
+[ RUN      ] AddTest.HandlesNegativeInput
+[       OK ] AddTest.HandlesNegativeInput (0 ms)
+[----------] 1 test from AddTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"AddTest.HandlesNegativeInput" end time: Nov 07 06:02 SE Asia Standard Time
+"AddTest.HandlesNegativeInput" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 07 06:02 SE Asia Standard Time

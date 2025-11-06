@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/Git/C-_Learning/8.0/build/cmake_install.cmake",
+		"E:/Git/C-_Learning/8.0/build/external/googletest/googletest-1.15.0/cmake_install.cmake",
+		"E:/Git/C-_Learning/8.0/build/external/googletest/googletest-1.15.0/googlemock/cmake_install.cmake",
+		"E:/Git/C-_Learning/8.0/build/external/googletest/googletest-1.15.0/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

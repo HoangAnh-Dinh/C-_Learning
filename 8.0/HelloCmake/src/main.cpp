@@ -1,6 +1,6 @@
 #include "mylib.h"
 
 int main() {
-    print_message("Hello from library!");
+    printf("Hello from library!");
     return 0;
 }
