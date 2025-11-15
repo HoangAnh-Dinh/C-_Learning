@@ -1,12 +1,17 @@
-#include <iostream>
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<vector>
 
-int main() {
-    int* leak = new int[5];  // Cấp phát nhưng quên delete → leak
+using namespace std;
 
-    int* no_leak = new int[5];
-    delete[] no_leak;        // Giải phóng đúng
-
-    std::cout << "Program is running..." << std::endl;
-
-    return 0; // 'leak' chưa được delete → memory leak
+int main()
+{
+int a[10] = {1,2,3,4,5,6,7,8,9,10};
+remove(a,a+10,7);
+for(auto e:a)
+{
+    cout<<e<<endl;
+}
+return 0;
 }
