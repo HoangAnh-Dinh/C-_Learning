@@ -1,18 +1,24 @@
 #include<iostream>
+#include<algorithm>
+#include<string>
 
-//Con tro hang va hang con tro
+using namespace std;
+
+
+struct foo
+{
+
+
+    int a;
+    string e;
+    char b;
+    char c;
+};
+
 
 
 int main()
 {
-int a = 8;
-int c = 10;
-int* const b = &a;
-
-a = 15;
-
-std::cout<<" *b = "<<*b;
-
-
+cout<<sizeof(foo);
 return 0;
 }
