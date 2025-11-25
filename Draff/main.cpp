@@ -1,25 +1,32 @@
 #include <iostream>
 #include <thread>
+#include <mutex>
+#include <condition_variable>
 
-int counter = 0; // biến dùng chung
+std::mutex mtx;
+std::condition_variable cv;
+bool ready = false;
 
-void increment()
-{
-    for (int i = 0; i < 100000; i++)
-    {
-        counter++;  // <-- Data race xảy ra tại đây
+void waiter() {
+    std::unique_lock<std::mutex> lock(mtx);
+    while (!ready) {           // kiểm tra flag trực tiếp, không dùng lambda
+        cv.wait(lock);         // wait sẽ unlock mutex và đợi notify
     }
+    std::cout << "Thread được thông báo, ready = true\n";
 }
 
-int main()
-{
-    std::thread t1(increment);
-    std::thread t2(increment);
+void notifier() {
+    {
+        std::lock_guard<std::mutex> lock(mtx);
+        ready = true;           // set flag
+    }
+    cv.notify_one();            // báo thread waiter
+}
+
+int main() {
+    std::thread t1(waiter);
+    std::thread t2(notifier);
 
     t1.join();
     t2.join();
-
-    std::cout << "Final counter = " << counter << std::endl;
-
-    return 0;
 }
