@@ -1,23 +1,25 @@
 #include <iostream>
 #include <thread>
-#include <mutex>
 
-std::mutex mtx;  // mutex dùng để khóa biến chung
-int counter = 0;  // biến chung
+int counter = 0; // biến dùng chung
 
-void increment(const std::string& name) {
-    mtx.lock(); 
-    for (int i = 0; i < 5; i++) {
-        //mtx.lock();           // khóa mutex trước khi truy cập counter
-        counter++;
-        std::cout << name << " increased counter to " << counter << std::endl;
-        //mtx.unlock();         // mở khóa mutex
+void increment()
+{
+    for (int i = 0; i < 100000; i++)
+    {
+        counter++;  // <-- Data race xảy ra tại đây
     }
 }
 
-int main() {
-    std::thread t(increment, "Dau nhoi ");
-    t.join();
+int main()
+{
+    std::thread t1(increment);
+    std::thread t2(increment);
+
+    t1.join();
+    t2.join();
+
+    std::cout << "Final counter = " << counter << std::endl;
 
     return 0;
 }
