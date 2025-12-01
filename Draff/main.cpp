@@ -1,32 +1,79 @@
-#include <iostream>
-#include <thread>
-#include <mutex>
-#include <condition_variable>
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<string>
 
-std::mutex mtx;
-std::condition_variable cv;
-bool ready = false;
+using namespace std;
 
-void waiter() {
-    std::unique_lock<std::mutex> lock(mtx);
-    while (!ready) {           // kiểm tra flag trực tiếp, không dùng lambda
-        cv.wait(lock);         // wait sẽ unlock mutex và đợi notify
-    }
-    std::cout << "Thread được thông báo, ready = true\n";
+class IObserver
+{
+public:
+virtual ~IObserver()=default;
+virtual void Update(std::string msg)=0;
+virtual void dettach()=0;
+};
+
+class publisher
+{
+private:
+std::vector<IObserver*> observerList;
+std::string message;
+public:
+publisher()
+{
+std::cout<<"Publisher created"<<std::endl;
 }
-
-void notifier() {
-    {
-        std::lock_guard<std::mutex> lock(mtx);
-        ready = true;           // set flag
-    }
-    cv.notify_one();            // báo thread waiter
+void attach(IObserver* ins)
+{
+observerList.push_back(ins);
 }
+void dettach(IObserver* ins)
+{
+observerList.erase(remove(observerList.begin(),observerList.end(),ins),observerList.end());
+}
+void notify()
+{
+for(auto* a:observerList)
+{a->Update(message);}
+}
+void publish(std::string msg)
+{
+message = msg;
+notify();
+}
+};
+class concreteObserver : public IObserver
+{
+private:
+std::string name;
+publisher* subject;
+public:
+concreteObserver(std::string _name, publisher* _subject):name(_name),subject(_subject)
+{
+ std::cout<<"Create "<<name<<std::endl;
+ subject->attach(this);
+}
+void Update(std::string msg) override
+{
+ std::cout<<"Receive msg : "<<msg<<std::endl;
+}
+void dettach() override
+{
+ subject->dettach(this);
+}
+ 
+};
 
-int main() {
-    std::thread t1(waiter);
-    std::thread t2(notifier);
-
-    t1.join();
-    t2.join();
+int main()
+{
+ publisher* youtube = new publisher();
+ IObserver* A = new concreteObserver("HoangAnh",youtube);
+ IObserver* B = new concreteObserver("PhuongAnh",youtube);
+ IObserver* C = new concreteObserver("Dua",youtube);
+ youtube->publish("Let's watch");
+ A->dettach();
+youtube->publish("Most Impotant thing");
+ 
+ 
+ return 0;
 }
